@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La Familia · Masajes, Duchas y Restaurante</title>
+<style>
+:root{--bg:#f8f4ec;--bg2:#efe8d9;--card:#fff;--ink:#23241f;--mute:#6b665a;--acc:#1c4a38;--accT:#fff;--gold:#a9822f;--line:#e3dac6;--dark:#14291f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111512;--bg2:#171c18;--card:#1c221d;--ink:#eee9db;--mute:#a29d8e;--acc:#7cc3a0;--accT:#0f1511;--gold:#d5b068;--line:#2c352d;--dark:#0b100d}}
+:root[data-theme="dark"]{--bg:#111512;--bg2:#171c18;--card:#1c221d;--ink:#eee9db;--mute:#a29d8e;--acc:#7cc3a0;--accT:#0f1511;--gold:#d5b068;--line:#2c352d;--dark:#0b100d}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Helvetica Neue",Arial,sans-serif}
+h1,h2,h3,.logo,.num{font-family:Georgia,"Times New Roman",serif;font-weight:500;margin:0}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.logo{font-size:1.5rem;letter-spacing:.05em}.logo b{color:var(--gold);font-weight:500}
+nav{display:flex;gap:24px;align-items:center;font-size:.92rem}
+nav a:hover{color:var(--gold)}
+#burger{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 11px;font-size:1.1rem}
+@media(max-width:780px){#burger{display:block}nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--bg);padding:18px;border-bottom:1px solid var(--line)}nav.open{display:flex}}
+.btn{display:inline-block;padding:12px 26px;border-radius:999px;border:1px solid var(--acc);background:var(--acc);color:var(--accT);cursor:pointer;font:inherit;font-size:.95rem;transition:.2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.15)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--gold)}
+.btn.sm{padding:7px 16px;font-size:.85rem}
+.hero{position:relative;overflow:hidden;min-height:86vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:90px 6vw;background:linear-gradient(160deg,var(--dark),#24533f 70%,#1a3a2c);color:#f4efe2}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(213,176,104,.25)}
+.hero:before{width:620px;height:620px;top:-220px;right:-160px}.hero:after{width:420px;height:420px;bottom:-180px;left:-120px}
+.hero>*{position:relative}
+.eyebrow{letter-spacing:.32em;text-transform:uppercase;font-size:.74rem;color:#d5b068}
+.hero h1{font-size:clamp(2.6rem,7.5vw,5.6rem);line-height:1.05;margin:16px 0}
+.hero p{max-width:580px;color:#d6d1c2;font-size:1.12rem}
+.hero .btn{background:#d5b068;border-color:#d5b068;color:#14291f}.hero .btn.ghost{background:transparent;color:#f4efe2}
+.row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:18px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;max-width:1000px;margin:-44px auto 0;padding:0 5vw;position:relative;z-index:2}
+.stats div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center}
+.stats b{display:block;font:500 1.9rem Georgia,serif;color:var(--gold)}.stats span{color:var(--mute);font-size:.85rem}
+section{padding:84px 6vw;max-width:1120px;margin:auto}
+.alt{background:var(--bg2);max-width:none}.alt>.in{max-width:1120px;margin:auto}
+h2{font-size:clamp(1.8rem,4vw,2.5rem);text-align:center}
+.sub{text-align:center;color:var(--mute);max-width:560px;margin:10px auto 44px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:12px;transition:.25s}
+.card:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(0,0,0,.1)}
+.num{font-size:2.6rem;color:var(--gold);line-height:1}
+.card p{color:var(--mute);margin:0}.card ul{margin:0;padding-left:18px;color:var(--mute);flex:1;font-size:.93rem}
+.price{font:500 1.15rem Georgia,serif}
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:6px 50px}
+.menu div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dotted var(--line);padding:12px 0}
+.menu small{display:block;color:var(--mute)}
+.steps{counter-reset:s}.steps .card:before{counter-increment:s;content:counter(s);font:500 2.2rem Georgia,serif;color:var(--gold)}
+.quote{font:italic 1.05rem/1.6 Georgia,serif}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 22px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}details p{color:var(--mute);margin:10px 0 0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+table.h td{padding:6px 0;color:var(--mute)}table.h td:last-child{text-align:right;color:var(--ink)}
+footer{background:var(--dark);color:#cfc9b8;padding:50px 6vw 30px;text-align:center;font-size:.9rem}
+footer .logo{color:#f4efe2;font-size:1.6rem}footer a{color:#d5b068;margin:0 10px}
+dialog{border:1px solid var(--line);border-radius:20px;background:var(--card);color:var(--ink);padding:32px;width:min(390px,92vw)}
+dialog::backdrop{background:rgba(0,0,0,.55)}
+input,select{width:100%;padding:12px 14px;margin:6px 0 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}
+.err{color:#c0392b;min-height:1.3em;font-size:.88rem}
+/* Panel empleados */
+#panel{display:none;min-height:100vh;grid-template-columns:230px 1fr}
+aside{background:var(--dark);color:#d9d4c4;padding:24px 16px;display:flex;flex-direction:column;gap:6px}
+aside .logo{color:#f4efe2;padding:0 10px 18px}
+aside button{background:none;border:0;color:inherit;text-align:left;padding:11px 14px;border-radius:10px;font:inherit;cursor:pointer}
+aside button.on,aside button:hover{background:rgba(213,176,104,.16);color:#d5b068}
+aside .out{margin-top:auto;border:1px solid rgba(255,255,255,.2)}
+.main{padding:30px 4vw;overflow:auto}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.kpis div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.kpis b{font:500 1.7rem Georgia,serif;display:block}.kpis span{color:var(--mute);font-size:.82rem}
+.bar{display:flex;gap:10px;flex-wrap:wrap}.bar input,.bar select{width:auto;margin:0;flex:1;min-width:140px}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card);margin-top:14px}
+table.r{width:100%;border-collapse:collapse;min-width:560px}
+.r th,.r td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);font-size:.92rem}.r th{color:var(--mute);font-weight:500}
+.tag{padding:3px 11px;border-radius:99px;font-size:.78rem;background:var(--bg2)}
+.t-Confirmada{color:#2e8b57}.t-Pendiente{color:#c58a1b}.t-Cancelada{color:#c0392b}
+.frame{width:100%;height:68vh;border:1px solid var(--line);border-radius:14px;background:var(--card);margin-top:14px}
+.note{background:var(--card);border:1px dashed var(--gold);border-radius:14px;padding:16px;color:var(--mute);margin-top:14px;font-size:.9rem}
+@media(max-width:780px){#panel{grid-template-columns:1fr}aside{flex-direction:row;flex-wrap:wrap;padding:12px}aside .logo{display:none}aside .out{margin:0 0 0 auto}}
+</style>
+</head>
+<body>
+<div id="site">
+<header>
+  <a class="logo" href="#">La <b>Familia</b></a>
+  <button id="burger" aria-label="Menú">☰</button>
+  <nav id="nav">
+    <a href="#servicios">Servicios</a><a href="#restaurante">Carta</a><a href="#proceso">Reservas</a><a href="#opiniones">Opiniones</a><a href="#faq">FAQ</a><a href="#contacto">Contacto</a>
+    <button class="btn sm ghost" id="open-login">Acceso empleados</button>
+  </nav>
+</header>
+
+<div class="hero">
+  <span class="eyebrow">Bienestar · Sabor · Hogar</span>
+  <h1>Un lugar para<br>cuidarte</h1>
+  <p>Masajes que alivian, duchas que renuevan y un restaurante donde siempre te sentirás en casa. Bienvenido a La Familia.</p>
+  <div class="row"><a class="btn" href="#servicios">Reservar ahora</a><a class="btn ghost" href="#restaurante">Ver la carta</a></div>
+</div>
+<div class="stats">
+  <div><b>3</b><span>servicios en un solo lugar</span></div>
+  <div><b>100%</b><span>reserva online</span></div>
+  <div><b>7 días</b><span>abierto a la semana</span></div>
+  <div><b>★ 4,9</b><span>valoración media</span></div>
+</div>
+
+<section id="servicios">
+  <h2>Nuestros servicios</h2><p class="sub">Elige lo que necesitas y reserva en menos de un minuto.</p>
+  <div class="grid">
+    <div class="card"><div class="num">01</div><h3>Masajes</h3><p>Terapias a medida con profesionales cualificados.</p>
+      <ul><li>Relajante y descontracturante</li><li>Deportivo y terapéutico</li><li>Sesiones de 30, 60 y 90 min</li></ul>
+      <div class="price">Desde 00 €</div><a class="btn" data-book="masajes" target="_blank" rel="noopener">Reservar masaje</a></div>
+    <div class="card"><div class="num">02</div><h3>Duchas</h3><p>Servicio de duchas cómodo, limpio y con todo incluido.</p>
+      <ul><li>Cabinas individuales</li><li>Toalla y amenities</li><li>Reserva por franja horaria</li></ul>
+      <div class="price">Desde 00 €</div><a class="btn" data-book="duchas" target="_blank" rel="noopener">Reservar ducha</a></div>
+    <div class="card"><div class="num">03</div><h3>Restaurante</h3><p>Cocina de casa con producto cuidado y trato familiar.</p>
+      <ul><li>Comidas y cenas</li><li>Grupos y celebraciones</li><li>Opciones sin gluten y vegetarianas</li></ul>
+      <div class="price">Carta variada</div><a class="btn" data-book="restaurante" target="_blank" rel="noopener">Reservar mesa</a></div>
+  </div>
+</section>
+
+<section class="alt" id="restaurante"><div class="in">
+  <h2>Del restaurante</h2><p class="sub">Una muestra de nuestra carta. Sustituye los platos y precios por los tuyos.</p>
+  <div class="menu">
+    <div><span>Plato de la casa<small>Receta familiar del día</small></span><b>00 €</b></div>
+    <div><span>Entrante para compartir<small>Producto de temporada</small></span><b>00 €</b></div>
+    <div><span>Carne a la brasa<small>Con guarnición</small></span><b>00 €</b></div>
+    <div><span>Pescado del día<small>Según mercado</small></span><b>00 €</b></div>
+    <div><span>Ensalada completa<small>Opción ligera</small></span><b>00 €</b></div>
+    <div><span>Postre casero<small>Elaboración propia</small></span><b>00 €</b></div>
+  </div>
+</div></section>
+
+<section id="proceso">
+  <h2>Reservar es fácil</h2><p class="sub">Tres pasos, sin llamadas ni esperas.</p>
+  <div class="grid steps">
+    <div class="card"><h3>Elige el servicio</h3><p>Masaje, ducha o mesa en el restaurante.</p></div>
+    <div class="card"><h3>Escoge día y hora</h3><p>Verás la disponibilidad real al momento.</p></div>
+    <div class="card"><h3>Recibe tu confirmación</h3><p>Te llega al correo y puedes modificarla cuando quieras.</p></div>
+  </div>
+</section>
+
+<section class="alt" id="opiniones"><div class="in">
+  <h2>Lo que dicen de nosotros</h2><p class="sub">Ejemplos de texto: cámbialos por opiniones reales de clientes.</p>
+  <div class="grid">
+    <div class="card"><p class="quote">“Salí como nuevo. Trato excelente y todo muy limpio.”</p><b>Cliente · Masajes</b></div>
+    <div class="card"><p class="quote">“Reservé online en un minuto y todo salió perfecto.”</p><b>Cliente · Duchas</b></div>
+    <div class="card"><p class="quote">“Comida casera de verdad. Volveremos en familia.”</p><b>Cliente · Restaurante</b></div>
+  </div>
+</div></section>
+
+<section id="faq">
+  <h2>Preguntas frecuentes</h2><p class="sub"></p>
+  <details><summary>¿Cómo cancelo o modifico mi reserva?</summary><p>Desde el enlace del correo de confirmación o contactando con nosotros.</p></details>
+  <details><summary>¿Necesito reservar con antelación?</summary><p>Recomendado, sobre todo en fines de semana y para grupos.</p></details>
+  <details><summary>¿Qué formas de pago aceptan?</summary><p>Indica aquí tus métodos de pago.</p></details>
+  <details><summary>¿Tienen opciones para alergias o dietas especiales?</summary><p>Sí, consúltanos al reservar y lo tendremos en cuenta.</p></details>
+</section>
+
+<section class="alt" id="contacto"><div class="in">
+  <h2>Contacto y horarios</h2><p class="sub"></p>
+  <div class="cols">
+    <div class="card"><h3>Dónde estamos</h3><p>Tu dirección, ciudad<br>Teléfono: 000 000 000<br>Email: info@tudominio.com</p></div>
+    <div class="card"><h3>Horario</h3><table class="h"><tr><td>Lunes a viernes</td><td>00:00 – 00:00</td></tr><tr><td>Sábados</td><td>00:00 – 00:00</td></tr><tr><td>Domingos</td><td>00:00 – 00:00</td></tr></table></div>
+  </div>
+</div></section>
+
+<footer><div class="logo">La Familia</div><p>Masajes · Duchas · Restaurante</p>
+  <p><a href="#">Aviso legal</a><a href="#">Privacidad</a><a href="#">Cookies</a></p><p>© 2026 La Familia. Todos los derechos reservados.</p></footer>
+</div>
+
+<div id="panel">
+  <aside>
+    <div class="logo">La <b>Familia</b></div>
+    <button class="on" data-v="resumen">Resumen</button>
+    <button data-v="restaurante">Reservas restaurante</button>
+    <button data-v="masajes">Masajes</button>
+    <button data-v="duchas">Duchas</button>
+    <button class="out" id="logout">Salir</button>
+  </aside>
+  <div class="main"><h2 id="vt" style="text-align:left"></h2><div id="view"></div></div>
+</div>
+
+<dialog id="login">
+  <h3 style="margin-bottom:16px">Acceso empleados</h3>
+  <label>Usuario<input id="u" autocomplete="username"></label>
+  <label>Contraseña<input id="p" type="password" autocomplete="current-password"></label>
+  <div class="err" id="err"></div>
+  <div class="row" style="margin:0"><button class="btn" id="enter" style="flex:1">Entrar</button><button class="btn ghost" id="cancel">Cancelar</button></div>
+</dialog>
+
+<script>
+/* ===== CONFIGURACIÓN ===== */
+const CONFIG={
+  clientes:{masajes:"",duchas:"",restaurante:""},   // enlaces públicos de reserva (Jotform / Kitking)
+  empleados:{restaurante:"",masajes:"",duchas:""},  // vistas internas (Kitking / lista de envíos de Jotform)
+  // Contraseñas guardadas como hash SHA-256. Demo: empleado / lafamilia2026
+  usuarios:{empleado:"5899ebbc1ce3dea0bc3403e430f09853880d2b251d1d2fde3e1d7f9662674933"}
+};
+/* Datos de EJEMPLO para ver el panel. Se sustituirán por los reales de Kitking/Jotform. */
+const DEMO=[
+ ["13:30","Marta Ruiz","Restaurante","4 pers.","Confirmada"],["14:00","Luis Gómez","Restaurante","2 pers.","Pendiente"],
+ ["16:00","Ana Torres","Masajes","60 min","Confirmada"],["17:30","Pablo Díaz","Duchas","Cabina 2","Confirmada"],
+ ["20:30","Familia León","Restaurante","8 pers.","Confirmada"],["21:00","Sara Vidal","Restaurante","3 pers.","Cancelada"],
+ ["18:00","Iván Mora","Masajes","90 min","Pendiente"]];
+/* ========================= */
+const $=s=>document.querySelector(s);
+$("#burger").onclick=()=>$("#nav").classList.toggle("open");
+document.querySelectorAll("#nav a").forEach(a=>a.onclick=()=>$("#nav").classList.remove("open"));
+document.querySelectorAll("[data-book]").forEach(a=>{const u=CONFIG.clientes[a.dataset.book];if(u)a.href=u;else{a.href="#contacto";a.title="Enlace pendiente de configurar"}});
+const dlg=$("#login");
+$("#open-login").onclick=()=>{$("#nav").classList.remove("open");dlg.showModal()};
+$("#cancel").onclick=()=>dlg.close();
+async function sha(t){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(t));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}
+async function enter(){
+  const u=$("#u").value.trim(),h=await sha($("#p").value);
+  if(CONFIG.usuarios[u]&&CONFIG.usuarios[u]===h){dlg.close();$("#err").textContent="";$("#site").style.display="none";$("#panel").style.display="grid";view("resumen");scrollTo(0,0)}
+  else $("#err").textContent="Usuario o contraseña incorrectos";
+}
+$("#enter").onclick=enter;$("#p").onkeydown=e=>{if(e.key==="Enter")enter()};
+$("#logout").onclick=()=>{$("#panel").style.display="none";$("#site").style.display="block";$("#u").value=$("#p").value=""};
+document.querySelectorAll("aside [data-v]").forEach(b=>b.onclick=()=>view(b.dataset.v));
+const titles={resumen:"Resumen de hoy",restaurante:"Reservas del restaurante",masajes:"Reservas de masajes",duchas:"Reservas de duchas"};
+function table(rows){return`<div class="tw"><table class="r"><tr><th>Hora</th><th>Cliente</th><th>Servicio</th><th>Detalle</th><th>Estado</th></tr>${rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td><td><span class="tag t-${r[4]}">${r[4]}</span></td></tr>`).join("")}</table></div>`}
+function view(v){
+  document.querySelectorAll("aside [data-v]").forEach(b=>b.classList.toggle("on",b.dataset.v===v));
+  $("#vt").textContent=titles[v];const el=$("#view");
+  if(v==="resumen"){
+    const c=s=>DEMO.filter(r=>r[2]===s).length;
+    el.innerHTML=`<div class="kpis"><div><b>${DEMO.length}</b><span>reservas hoy</span></div><div><b>${c("Restaurante")}</b><span>restaurante</span></div><div><b>${c("Masajes")}</b><span>masajes</span></div><div><b>${c("Duchas")}</b><span>duchas</span></div></div>`+table(DEMO)+`<div class="note">Datos de ejemplo. Conecta Kitking y Jotform en <code>CONFIG</code> para ver aquí las reservas reales.</div>`;
+    return}
+  const name={restaurante:"Restaurante",masajes:"Masajes",duchas:"Duchas"}[v],u=CONFIG.empleados[v];
+  const rows=DEMO.filter(r=>r[2]===name);
+  el.innerHTML=u?`<iframe class="frame" src="${u}" title="${name}"></iframe><p><a class="btn sm ghost" href="${u}" target="_blank" rel="noopener">Abrir en pestaña nueva</a></p>`
+   :`<div class="bar"><input id="q" placeholder="Buscar cliente…"><select id="f"><option value="">Todos los estados</option><option>Confirmada</option><option>Pendiente</option><option>Cancelada</option></select></div><div id="tb">${table(rows)}</div><div class="note">Vista de ejemplo. Añade la URL en <code>CONFIG.empleados.${v}</code> para mostrar tu sistema real.</div>`;
+  if(!u){const go=()=>{const q=$("#q").value.toLowerCase(),f=$("#f").value;$("#tb").innerHTML=table(rows.filter(r=>r[1].toLowerCase().includes(q)&&(!f||r[4]===f)))};$("#q").oninput=go;$("#f").onchange=go}
+}
+</script>
+</body>
+</html>
